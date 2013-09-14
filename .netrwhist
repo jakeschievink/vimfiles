@@ -1,0 +1,7 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =5
+let g:netrw_dirhist_1='/home/yggdrasil/Dropbox/Projects/RandomArtGeneratorFiles/RandomArtGenerator/src'
+let g:netrw_dirhist_2='/home/yggdrasil/Documents/Django-tests/Blog/templates'
+let g:netrw_dirhist_3='/etc/udev/rules.d'
+let g:netrw_dirhist_4='/home/yggdrasil/Dropbox/text/programming techniques for the interactive arts'
+let g:netrw_dirhist_5='/home/yggdrasil/Dropbox/text'
