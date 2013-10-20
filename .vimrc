@@ -1,7 +1,7 @@
 execute pathogen#infect()
 call pathogen#incubate()
 call pathogen#helptags()
-
+autocmd! BufNewFile,BufRead *.pde setlocal ft=arduino
 filetype plugin on
 filetype indent on 
 
