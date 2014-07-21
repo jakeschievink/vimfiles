@@ -93,7 +93,7 @@ setlocal nospell
 setlocal spellcapcheck=[.?!]\\_[\\])'\"\	\ ]\\+
 setlocal spellfile=
 setlocal spelllang=en
-setlocal statusline=%<%#StatusLine#%#StatuslineNC#1\ alter_gift_card_codes_to_remove_not_null_constraint.rb%#StatusLine#\ \ 2\ add_referral_tracking_referrers.rb[#]%#StatusLine#%=\ \ \ 
+setlocal statusline=%<%#StatusLine#%#StatuslineNC#1\ alter_gift_card_codes_to_remove_not_null_constraint.rb%#StatusLine#%#StatusLine#%=\ \ \ \ \ \ \ 
 setlocal suffixesadd=.rb
 setlocal swapfile
 setlocal synmaxcol=3000
@@ -110,11 +110,11 @@ setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 4 - ((3 * winheight(0) + 26) / 53)
+let s:l = 1 - ((0 * winheight(0) + 24) / 48)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-4
+1
 normal! 0
 let &so = s:so_save | let &siso = s:siso_save
 doautoall SessionLoadPost

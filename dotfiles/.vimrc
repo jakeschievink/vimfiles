@@ -38,6 +38,10 @@ endfunction
 :set dictionary="/usr/dict/words"
 filetype plugin indent on
 
+let g:vimroom_background="white"
+let g:vimroom_guibackground = "black"
+let g:vimroom_ctermbackground="black"
+let g:vimroom_width=100
 map <C-k> <C-w><Up>
 map <C-j> <C-w><Down>
 map <C-l> <C-w><Right>
