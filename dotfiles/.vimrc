@@ -36,16 +36,23 @@ function! Tab_Or_Complete()
 endfunction
 :inoremap <Tab> <C-R>=Tab_Or_Complete()<CR>
 :set dictionary="/usr/dict/words"
+
+" sets scroll off
+set so=5
+
 filetype plugin indent on
 
 let g:vimroom_background="white"
 let g:vimroom_guibackground = "black"
 let g:vimroom_ctermbackground="black"
 let g:vimroom_width=100
+let NERDTreeDirArrows=0
 map <C-k> <C-w><Up>
 map <C-j> <C-w><Down>
 map <C-l> <C-w><Right>
 map <C-h> <C-w><Left>
+map <C-n> :tabnext<cr>
+map <C-t><C-n> :tabnew<cr>
 " in visual mode, applies last command to everyline in selection
 map <C-d> :normal .<cr>
 nmap ` :shell<CR>
@@ -70,4 +77,8 @@ augroup InsertHighlight
         autocmd InsertLeave * set nocul
 augroup END
 
-
+augroup OpenNerdTree
+    autocmd!
+    autocmd VimEnter * NERDTree 
+    autocmd VimEnter * wincmd l
+augroup END

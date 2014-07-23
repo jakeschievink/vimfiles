@@ -11,14 +11,11 @@ inoremap <buffer> <silent> C :let g:netrw_chgwin= winnr()
 inoremap <buffer> <silent> c :exe "keepjumps lcd ".fnameescape(b:netrw_curdir)
 let &cpo=s:cpo_save
 unlet s:cpo_save
-setlocal keymap=
-setlocal noarabic
 setlocal autoindent
-setlocal balloonexpr=netrw#NetrwBalloonHelp()
 setlocal nobinary
-setlocal bufhidden=
+setlocal bufhidden=delete
 setlocal nobuflisted
-setlocal buftype=
+setlocal buftype=nofile
 setlocal nocindent
 setlocal cinkeys=0{,0},0),:,0#,!^F,o,O,e
 setlocal cinoptions=
@@ -26,9 +23,7 @@ setlocal cinwords=if,else,while,do,for,switch
 setlocal colorcolumn=
 setlocal comments=s1:/*,mb:*,ex:*/,://,b:#,:%,:XCOMM,n:>,fb:-
 setlocal commentstring=/*%s*/
-setlocal complete=.,w,b,u,t,i
-setlocal concealcursor=
-setlocal conceallevel=0
+setlocal complete=.,w,b,u,t
 setlocal completefunc=
 setlocal nocopyindent
 setlocal cryptmethod=
@@ -58,23 +53,23 @@ setlocal formatexpr=
 setlocal formatoptions=tcq
 setlocal formatlistpat=^\\s*\\d\\+[\\]:.)}\\t\ ]\\s*
 setlocal grepprg=
-setlocal iminsert=2
-setlocal imsearch=2
+setlocal iminsert=0
+setlocal imsearch=0
 setlocal include=
 setlocal includeexpr=
 setlocal indentexpr=
 setlocal indentkeys=0{,0},:,0#,!^F,o,O,e
 setlocal noinfercase
-setlocal iskeyword=@,48-57,_,192-255
+setlocal iskeyword=@,48-57,_,192-255,.,~,-,*,/
 setlocal keywordprg=
-setlocal linebreak
+setlocal nolinebreak
 setlocal nolisp
 setlocal nolist
 setlocal makeprg=
 setlocal matchpairs=(:),{:},[:]
-setlocal nomodeline
+setlocal modeline
 setlocal nomodifiable
-setlocal nrformats=octal,hex
+setlocal nrformats=hex
 setlocal nonumber
 setlocal numberwidth=4
 setlocal omnifunc=
@@ -84,25 +79,23 @@ setlocal nopreviewwindow
 setlocal quoteescape=\\
 setlocal readonly
 setlocal norelativenumber
-setlocal norightleft
-setlocal rightleftcmd=search
 setlocal noscrollbind
-setlocal shiftwidth=8
+setlocal shiftwidth=4
 setlocal noshortname
-setlocal nosmartindent
+setlocal smartindent
 setlocal softtabstop=0
 setlocal nospell
-setlocal spellcapcheck=[.?!]\\_[\\])'\"\	\ ]\\+
+setlocal spellcapcheck=
 setlocal spellfile=
 setlocal spelllang=en
-setlocal statusline=
+setlocal statusline=%<%#StatusLine#%#StatusLine#%=\ 
 setlocal suffixesadd=
 setlocal swapfile
 setlocal synmaxcol=3000
 if &syntax != 'netrw'
 setlocal syntax=netrw
 endif
-setlocal tabstop=8
+setlocal tabstop=32
 setlocal tags=
 setlocal textwidth=0
 setlocal thesaurus=
@@ -111,14 +104,13 @@ setlocal nowinfixheight
 setlocal nowinfixwidth
 setlocal nowrap
 setlocal wrapmargin=0
-silent! normal! zE
-let s:l = 18 - ((17 * winheight(0) + 29) / 58)
+let s:l = 8 - ((7 * winheight(0) + 24) / 48)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-18
+8
 normal! 0
-lcd ~/ArduinoTests/MotionSensingArduino
+lcd ~/gits/freemyapps
 let &so = s:so_save | let &siso = s:siso_save
 doautoall SessionLoadPost
 " vim: set ft=vim :
