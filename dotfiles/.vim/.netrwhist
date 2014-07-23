@@ -1,0 +1,6 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =4
+let g:netrw_dirhist_1='/Users/jschievink/gits/freemyapps/app/views/administration/shared'
+let g:netrw_dirhist_2='/Users/jschievink/gits/freemyapps/log'
+let g:netrw_dirhist_3='/Users/jschievink/gits/vimfiles/dotfiles/.vim/bundle'
+let g:netrw_dirhist_4='/Users/jschievink/.vim'
