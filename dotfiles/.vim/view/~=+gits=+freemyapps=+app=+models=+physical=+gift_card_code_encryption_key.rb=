@@ -93,7 +93,7 @@ setlocal nospell
 setlocal spellcapcheck=
 setlocal spellfile=
 setlocal spelllang=en
-setlocal statusline=%<%#StatusLine#%#StatuslineNC#2\ gift_card_code_encryption_key.rb%#StatusLine#\ \ 3\ future_user_device_campaign_table_partitions_creator.rb\ \ 4\ future_user_device_campaign_table_partitions_creator_spec.rb\ \ 5\ gift_card_code_encrypted_value.rb\ \ 6\ factories.rb\ \ 7\ gift_card_code_encrypted_value_spec.rb\ \ 8\ gift_card_code_encrypted_key_spec.rb\ \ 9\ access_role_spec.rb\ \ 10\ -No\ Name-%#StatusLine#%=\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 
+setlocal statusline=%<%#StatusLine#1\ gift_card_code_encrypted_key_spec.rb\ \ %#StatuslineNC#3\ gift_card_code_encryption_key.rb[#]%#StatusLine#\ \ 7\ ab_test_device_spec.rb\ \ 82\ factories.rb\ \ 83\ gift_card_code_encrypted_value.rb>%#StatusLine#%=\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 
 setlocal suffixesadd=.rb
 setlocal swapfile
 setlocal synmaxcol=3000
@@ -115,7 +115,7 @@ if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
 3
-normal! 04l
+normal! 021l
 let &so = s:so_save | let &siso = s:siso_save
 doautoall SessionLoadPost
 " vim: set ft=vim :

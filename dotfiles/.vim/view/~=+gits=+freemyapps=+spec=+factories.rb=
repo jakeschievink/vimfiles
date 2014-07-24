@@ -93,7 +93,7 @@ setlocal nospell
 setlocal spellcapcheck=
 setlocal spellfile=
 setlocal spelllang=en
-setlocal statusline=%<%#StatusLine#1\ gift_card_code_encryption_key.rb\ \ 2\ future_user_device_campaign_table_partitions_creator.rb\ \ 9\ future_user_device_campaign_table_partitions_creator_spec.rb\ \ 12\ gift_card_code_encrypted_value.rb\ \ %#StatuslineNC#22\ factories.rb[#]%#StatusLine#>%#StatusLine#%=\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 
+setlocal statusline=%<%#StatusLine#1\ gift_card_code_encrypted_key_spec.rb>%#StatusLine#%=\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 
 setlocal suffixesadd=.rb
 setlocal swapfile
 setlocal synmaxcol=3000
@@ -110,12 +110,12 @@ setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 877 - ((1 * winheight(0) + 23) / 47)
+let s:l = 133 - ((15 * winheight(0) + 18) / 37)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-877
-normal! 011l
+133
+normal! 04l
 let &so = s:so_save | let &siso = s:siso_save
 doautoall SessionLoadPost
 " vim: set ft=vim :

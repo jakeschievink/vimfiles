@@ -59,7 +59,7 @@ setlocal matchpairs=(:),{:},[:]
 setlocal modeline
 setlocal nomodifiable
 setlocal nrformats=hex
-setlocal nonumber
+setlocal number
 setlocal numberwidth=4
 setlocal omnifunc=
 setlocal path=
@@ -77,7 +77,7 @@ setlocal nospell
 setlocal spellcapcheck=
 setlocal spellfile=
 setlocal spelllang=en
-setlocal statusline=%<%#StatusLine#1\ TheGreatShip.txt[#]\ \ %#StatuslineNC#2\ new%#StatusLine#%#StatusLine#%=\ 
+setlocal statusline=%<%#StatusLine#1\ SlateDads.markdown[#]\ \ 3\ -No\ Name-%#StatusLine#%=\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 
 setlocal suffixesadd=
 setlocal swapfile
 setlocal synmaxcol=3000
@@ -91,10 +91,10 @@ setlocal thesaurus=
 setlocal noundofile
 setlocal nowinfixheight
 setlocal nowinfixwidth
-setlocal wrap
+setlocal nowrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 1 - ((0 * winheight(0) + 24) / 49)
+let s:l = 1 - ((0 * winheight(0) + 24) / 48)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt

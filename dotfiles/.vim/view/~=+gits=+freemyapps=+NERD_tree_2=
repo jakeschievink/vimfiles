@@ -122,7 +122,7 @@ setlocal nospell
 setlocal spellcapcheck=
 setlocal spellfile=
 setlocal spelllang=en
-setlocal statusline=
+setlocal statusline=%<%#StatusLine#6\ SlateDads.markdown%#StatusLine#%=\ \ %{exists('b:NERDTreeRoot')?b:NERDTreeRoot.path.str():''}
 setlocal suffixesadd=.rb
 setlocal noswapfile
 setlocal synmaxcol=3000
@@ -130,7 +130,7 @@ if &syntax != 'nerdtree'
 setlocal syntax=nerdtree
 endif
 setlocal tabstop=4
-setlocal tags=~/gits/freemyapps/tags,~/gits/freemyapps/tmp/tags,./tags,tags
+setlocal tags=~/gits/freemyapps/.git/nerdtree.tags,~/gits/freemyapps/.git/tags,~/gits/freemyapps/tags,~/gits/freemyapps/tmp/tags,./tags,tags
 setlocal textwidth=0
 setlocal thesaurus=
 setlocal noundofile
@@ -138,11 +138,11 @@ setlocal nowinfixheight
 setlocal winfixwidth
 setlocal nowrap
 setlocal wrapmargin=0
-let s:l = 1 - ((0 * winheight(0) + 24) / 48)
+let s:l = 4 - ((3 * winheight(0) + 24) / 49)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-1
+4
 normal! 0
 lcd ~/gits/freemyapps
 let &so = s:so_save | let &siso = s:siso_save

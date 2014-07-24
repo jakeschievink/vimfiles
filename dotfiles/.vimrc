@@ -36,7 +36,8 @@ function! Tab_Or_Complete()
 endfunction
 :inoremap <Tab> <C-R>=Tab_Or_Complete()<CR>
 :set dictionary="/usr/dict/words"
-
+set t_Co=256
+colorscheme wombat256mod
 " sets scroll off
 set so=5
 
@@ -58,7 +59,7 @@ map <C-d> :normal .<cr>
 nmap ` :shell<CR>
 nmap <S-Enter> O<Esc>
 nmap <CR> o<Esc>
- 
+
 set updatetime=10000
 augroup DisableInsert
         autocmd!
