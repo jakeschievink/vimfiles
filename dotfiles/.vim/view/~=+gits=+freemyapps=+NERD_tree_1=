@@ -47,7 +47,7 @@ let &cpo=s:cpo_save
 unlet s:cpo_save
 setlocal autoindent
 setlocal nobinary
-setlocal bufhidden=hide
+setlocal bufhidden=wipe
 setlocal nobuflisted
 setlocal buftype=nofile
 setlocal nocindent
@@ -122,7 +122,7 @@ setlocal nospell
 setlocal spellcapcheck=
 setlocal spellfile=
 setlocal spelllang=en
-setlocal statusline=%<%#StatusLine#1\ personal_github%#StatusLine#%=\ \ %{exists('b:NERDTreeRoot')?b:NERDTreeRoot.path.str():''}
+setlocal statusline=%<%#StatusLine#1\ application_controller.rb%#StatusLine#%=\ \ %{exists('b:NERDTreeRoot')?b:NERDTreeRoot.path.str():''}
 setlocal suffixesadd=.rb
 setlocal noswapfile
 setlocal synmaxcol=3000
