@@ -122,7 +122,7 @@ setlocal nospell
 setlocal spellcapcheck=
 setlocal spellfile=
 setlocal spelllang=en
-setlocal statusline=%<%#StatusLine#6\ SlateDads.markdown%#StatusLine#%=\ %{exists('b:NERDTreeRoot')?b:NERDTreeRoot.path.str():''}
+setlocal statusline=%<%#StatusLine#6\ rat.txt%#StatusLine#%=\ %{exists('b:NERDTreeRoot')?b:NERDTreeRoot.path.str():''}
 setlocal suffixesadd=.rb
 setlocal noswapfile
 setlocal synmaxcol=3000
@@ -138,11 +138,11 @@ setlocal nowinfixheight
 setlocal nowinfixwidth
 setlocal nowrap
 setlocal wrapmargin=0
-let s:l = 8 - ((7 * winheight(0) + 24) / 48)
+let s:l = 7 - ((6 * winheight(0) + 24) / 48)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-8
+7
 normal! 0
 lcd ~/gits/freemyapps
 let &so = s:so_save | let &siso = s:siso_save

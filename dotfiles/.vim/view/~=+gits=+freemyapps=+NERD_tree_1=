@@ -122,7 +122,7 @@ setlocal nospell
 setlocal spellcapcheck=
 setlocal spellfile=
 setlocal spelllang=en
-setlocal statusline=%<%#StatusLine#1\ gift_card_code_encrypted_value.rb%#StatusLine#%=\ \ %{exists('b:NERDTreeRoot')?b:NERDTreeRoot.path.str():''}
+setlocal statusline=%<%#StatusLine#1\ database_permissions_janitor.rb%#StatusLine#%=\ \ \ %{exists('b:NERDTreeRoot')?b:NERDTreeRoot.path.str():''}
 setlocal suffixesadd=.rb
 setlocal noswapfile
 setlocal synmaxcol=3000

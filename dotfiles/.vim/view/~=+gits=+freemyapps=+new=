@@ -2,18 +2,9 @@ let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
 argglobal
 let s:cpo_save=&cpo
 set cpo&vim
-vmap <buffer> [] <Plug>(Markdown_MoveToPreviousSiblingHeader)
-vmap <buffer> [[ <Plug>(Markdown_MoveToPreviousHeader)
-nmap <buffer> [] <Plug>(Markdown_MoveToPreviousSiblingHeader)
-nmap <buffer> [[ <Plug>(Markdown_MoveToPreviousHeader)
-vmap <buffer> ]c <Plug>(Markdown_MoveToCurHeader)
-vmap <buffer> ]u <Plug>(Markdown_MoveToParentHeader)
-vmap <buffer> ][ <Plug>(Markdown_MoveToNextSiblingHeader)
-vmap <buffer> ]] <Plug>(Markdown_MoveToNextHeader)
-nmap <buffer> ]c <Plug>(Markdown_MoveToCurHeader)
-nmap <buffer> ]u <Plug>(Markdown_MoveToParentHeader)
-nmap <buffer> ][ <Plug>(Markdown_MoveToNextSiblingHeader)
-nmap <buffer> ]] <Plug>(Markdown_MoveToNextHeader)
+nmap <buffer> gf <Plug>RailsTabFind
+nmap <buffer> f <Plug>RailsSplitFind
+nmap <buffer> gf <Plug>RailsFind
 let &cpo=s:cpo_save
 unlet s:cpo_save
 setlocal autoindent
@@ -41,12 +32,12 @@ setlocal nodiff
 setlocal equalprg=
 setlocal errorformat=
 setlocal expandtab
-if &filetype != 'mkd'
-setlocal filetype=mkd
+if &filetype != ''
+setlocal filetype=
 endif
 setlocal foldcolumn=0
 setlocal foldenable
-setlocal foldexpr=Foldexpr_markdown(v:lnum)
+setlocal foldexpr=0
 setlocal foldignore=#
 setlocal foldlevel=0
 setlocal foldmarker={{{,}}}
@@ -56,29 +47,29 @@ setlocal foldnestmax=20
 setlocal foldtext=foldtext()
 setlocal formatexpr=
 setlocal formatoptions=tcq
-setlocal formatlistpat=^\\s*\\d\\+\\.\\s\\+\\|^[-*+]\\s\\+
+setlocal formatlistpat=^\\s*\\d\\+[\\]:.)}\\t\ ]\\s*
 setlocal grepprg=
 setlocal iminsert=0
 setlocal imsearch=0
 setlocal include=
-setlocal includeexpr=
-setlocal indentexpr=GetMkdIndent()
+setlocal includeexpr=RailsIncludeexpr()
+setlocal indentexpr=
 setlocal indentkeys=0{,0},:,0#,!^F,o,O,e
 setlocal noinfercase
 setlocal iskeyword=@,48-57,_,192-255
 setlocal keywordprg=
-setlocal linebreak
+setlocal nolinebreak
 setlocal nolisp
 setlocal nolist
 setlocal makeprg=
 setlocal matchpairs=(:),{:},[:]
 setlocal modeline
-setlocal modifiable
+setlocal nomodifiable
 setlocal nrformats=hex
-setlocal nonumber
+setlocal number
 setlocal numberwidth=4
 setlocal omnifunc=
-setlocal path=
+setlocal path=.,~/gits/freemyapps/lib,~/gits/freemyapps/vendor,~/gits/freemyapps/app/models/concerns,~/gits/freemyapps/app/controllers/concerns,~/gits/freemyapps/app/controllers,~/gits/freemyapps/app/helpers,~/gits/freemyapps/app/mailers,~/gits/freemyapps/app/models,~/gits/freemyapps/app/*,~/gits/freemyapps/app/views,~/gits/freemyapps/test,~/gits/freemyapps/test/unit,~/gits/freemyapps/test/functional,~/gits/freemyapps/test/integration,~/gits/freemyapps/test/controllers,~/gits/freemyapps/test/helpers,~/gits/freemyapps/test/mailers,~/gits/freemyapps/test/models,~/gits/freemyapps/spec,~/gits/freemyapps/spec/controllers,~/gits/freemyapps/spec/helpers,~/gits/freemyapps/spec/mailers,~/gits/freemyapps/spec/models,~/gits/freemyapps/spec/views,~/gits/freemyapps/spec/lib,~/gits/freemyapps/spec/features,~/gits/freemyapps/spec/requests,~/gits/freemyapps/spec/integration,~/gits/freemyapps/vendor/plugins/*/lib,~/gits/freemyapps/vendor/plugins/*/test,~/gits/freemyapps/vendor/rails/*/lib,~/gits/freemyapps/vendor/rails/*/test,~/gits/freem
 setlocal nopreserveindent
 setlocal nopreviewwindow
 setlocal quoteescape=\\
@@ -87,44 +78,34 @@ setlocal norelativenumber
 setlocal noscrollbind
 setlocal shiftwidth=4
 setlocal noshortname
-setlocal nosmartindent
+setlocal smartindent
 setlocal softtabstop=0
 setlocal nospell
-setlocal spellcapcheck=[.?!]\\_[\\])'\"\	\ ]\\+
+setlocal spellcapcheck=
 setlocal spellfile=
 setlocal spelllang=en
-setlocal statusline=%<%#StatusLine#6\ SlateDads.markdown[#]%#StatusLine#%=\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 
-setlocal suffixesadd=
+setlocal statusline=%<%#StatusLine#6\ SlateDads.markdown[#]%#StatusLine#%=\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 
+setlocal suffixesadd=.rb
 setlocal swapfile
 setlocal synmaxcol=3000
-if &syntax != 'mkd'
-setlocal syntax=mkd
+if &syntax != ''
+setlocal syntax=
 endif
 setlocal tabstop=4
-setlocal tags=
+setlocal tags=~/gits/freemyapps/tags,~/gits/freemyapps/tmp/tags,~/gits/freemyapps/.git/tags,./tags,tags
 setlocal textwidth=0
 setlocal thesaurus=
 setlocal noundofile
 setlocal nowinfixheight
 setlocal nowinfixwidth
-setlocal wrap
+setlocal nowrap
 setlocal wrapmargin=0
-2
-normal zo
-2
-normal zo
-2
-normal zo
-2
-normal zo
-2
-normal zo
-let s:l = 33 - ((3 * winheight(0) + 20) / 41)
+let s:l = 1 - ((0 * winheight(0) + 24) / 48)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-33
-normal! 0673l
+1
+normal! 0
 lcd ~/gits/freemyapps
 let &so = s:so_save | let &siso = s:siso_save
 doautoall SessionLoadPost
