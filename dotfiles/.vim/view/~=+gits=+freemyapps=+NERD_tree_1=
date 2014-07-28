@@ -47,7 +47,7 @@ let &cpo=s:cpo_save
 unlet s:cpo_save
 setlocal autoindent
 setlocal nobinary
-setlocal bufhidden=wipe
+setlocal bufhidden=hide
 setlocal nobuflisted
 setlocal buftype=nofile
 setlocal nocindent
@@ -122,7 +122,7 @@ setlocal nospell
 setlocal spellcapcheck=
 setlocal spellfile=
 setlocal spelllang=en
-setlocal statusline=%<%#StatusLine#1\ application_controller.rb%#StatusLine#%=\ \ %{exists('b:NERDTreeRoot')?b:NERDTreeRoot.path.str():''}
+setlocal statusline=%<%#StatusLine#1\ adolescentbody.markdown%#StatusLine#%=\ \ %{exists('b:NERDTreeRoot')?b:NERDTreeRoot.path.str():''}
 setlocal suffixesadd=.rb
 setlocal noswapfile
 setlocal synmaxcol=3000
@@ -130,7 +130,7 @@ if &syntax != 'nerdtree'
 setlocal syntax=nerdtree
 endif
 setlocal tabstop=4
-setlocal tags=~/gits/freemyapps/.git/nerdtree.tags,~/gits/freemyapps/.git/tags,~/gits/freemyapps/tags,~/gits/freemyapps/tmp/tags,./tags,tags
+setlocal tags=~/gits/freemyapps/tags,~/gits/freemyapps/tmp/tags,./tags;,tags
 setlocal textwidth=0
 setlocal thesaurus=
 setlocal noundofile

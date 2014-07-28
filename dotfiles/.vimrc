@@ -35,12 +35,14 @@ function! Tab_Or_Complete()
     endif
 endfunction
 
-:inoremap <Tab> <C-R>=Tab_Or_Complete()<CR>
-:set dictionary="/usr/dict/words"
+inoremap <Tab> <C-R>=Tab_Or_Complete()<CR>
+set dictionary="/usr/dict/words"
+set com=s1:/*,mb:*,ex:*/,://,b:#,:%,:XCOMM,n:>,b:-
 set t_Co=256
 colorscheme wombat256mod
 " sets scroll off
 set so=5
+set foldmethod=manual 
 
 
 let g:vimroom_background="white"

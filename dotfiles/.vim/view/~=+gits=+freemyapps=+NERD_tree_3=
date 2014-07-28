@@ -130,7 +130,7 @@ if &syntax != 'nerdtree'
 setlocal syntax=nerdtree
 endif
 setlocal tabstop=4
-setlocal tags=~/gits/freemyapps/tags,~/gits/freemyapps/tmp/tags,./tags,tags
+setlocal tags=~/gits/freemyapps/tags,~/gits/freemyapps/tmp/tags,./tags;,tags
 setlocal textwidth=0
 setlocal thesaurus=
 setlocal noundofile
@@ -138,11 +138,11 @@ setlocal nowinfixheight
 setlocal nowinfixwidth
 setlocal nowrap
 setlocal wrapmargin=0
-let s:l = 5 - ((4 * winheight(0) + 24) / 48)
+let s:l = 4 - ((3 * winheight(0) + 24) / 48)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-5
+4
 normal! 01l
 lcd ~/gits/freemyapps
 let &so = s:so_save | let &siso = s:siso_save
