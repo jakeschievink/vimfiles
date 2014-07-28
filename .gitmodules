@@ -43,3 +43,6 @@
 [submodule "dotfiles/.vim/bundle/vimroom"]
 	path = dotfiles/.vim/bundle/vimroom
 	url = https://github.com/mikewest/vimroom.git
+[submodule "dotfiles/.vim/bundle/vim-exchange"]
+	path = dotfiles/.vim/bundle/vim-exchange
+	url = https://github.com/tommcdo/vim-exchange.git
