@@ -4,3 +4,6 @@
 [submodule "dotfiles/.vim/bundle/gruvbox"]
 	path = dotfiles/.vim/bundle/gruvbox
 	url = https://github.com/morhetz/gruvbox.git
+[submodule "dotfiles/.vim/bundle/nerdtree"]
+	path = dotfiles/.vim/bundle/nerdtree
+	url = https://github.com/scrooloose/nerdtree.git
