@@ -21,7 +21,7 @@
 	url = https://github.com/tpope/vim-fugitive.git
 [submodule "dotfiles/.vim/bundle/vim-markdown"]
 	path = dotfiles/.vim/bundle/vim-markdown
-	url = https://github.com/plasticboy/vim-markdown.git
+	url = https://github.com/tpope/vim-markdown.git
 [submodule "dotfiles/.vim/bundle/vim-rails"]
 	path = dotfiles/.vim/bundle/vim-rails
 	url = https://github.com/tpope/vim-rails.git
@@ -46,3 +46,12 @@
 [submodule "dotfiles/.vim/bundle/vim-exchange"]
 	path = dotfiles/.vim/bundle/vim-exchange
 	url = https://github.com/tommcdo/vim-exchange.git
+[submodule "dotfiles/.vim/bundle/vim-pandoc"]
+	path = dotfiles/.vim/bundle/vim-pandoc
+	url = https://github.com/vim-pandoc/vim-pandoc.git
+[submodule "dotfiles/.vim/bundle/lightline.vim"]
+	path = dotfiles/.vim/bundle/lightline.vim
+	url = https://github.com/itchyny/lightline.vim.git
+[submodule "dotfiles/.vim/bundle/syntastic"]
+	path = dotfiles/.vim/bundle/syntastic
+	url = https://github.com/scrooloose/syntastic.git

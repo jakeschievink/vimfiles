@@ -1,6 +1,6 @@
 let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
 argglobal
-setlocal autoindent
+setlocal noautoindent
 setlocal nobinary
 setlocal bufhidden=
 setlocal buflisted
@@ -10,9 +10,9 @@ setlocal cinkeys=0{,0},0),:,0#,!^F,o,O,e
 setlocal cinoptions=
 setlocal cinwords=if,else,while,do,for,switch
 setlocal colorcolumn=
-setlocal comments=s1:/*,mb:*,ex:*/,://,b:#,:%,:XCOMM,n:>,fb:-
+setlocal comments=s1:/*,mb:*,ex:*/,://,b:#,:%,:XCOMM,n:>,b:-
 setlocal commentstring=/*%s*/
-setlocal complete=.,w,b,u,t
+setlocal complete=.,w,b,u,t,i
 setlocal completefunc=
 setlocal nocopyindent
 setlocal cryptmethod=
@@ -51,15 +51,15 @@ setlocal indentkeys=0{,0},:,0#,!^F,o,O,e
 setlocal noinfercase
 setlocal iskeyword=@,48-57,_,192-255
 setlocal keywordprg=
-setlocal linebreak
+setlocal nolinebreak
 setlocal nolisp
 setlocal nolist
 setlocal makeprg=
 setlocal matchpairs=(:),{:},[:]
 setlocal modeline
 setlocal modifiable
-setlocal nrformats=hex
-setlocal nonumber
+setlocal nrformats=octal,hex
+setlocal number
 setlocal numberwidth=4
 setlocal omnifunc=
 setlocal path=
@@ -77,7 +77,7 @@ setlocal nospell
 setlocal spellcapcheck=[.?!]\\_[\\])'\"\	\ ]\\+
 setlocal spellfile=
 setlocal spelllang=en
-setlocal statusline=%<%#StatusLine#%#StatuslineNC#1\ TheGreatShip.txt[+]%#StatusLine#%#StatusLine#%=\ \ \ \ \ \ 
+setlocal statusline=
 setlocal suffixesadd=
 setlocal swapfile
 setlocal synmaxcol=3000
@@ -94,7 +94,7 @@ setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 1 - ((0 * winheight(0) + 20) / 41)
+let s:l = 1 - ((0 * winheight(0) + 24) / 49)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt

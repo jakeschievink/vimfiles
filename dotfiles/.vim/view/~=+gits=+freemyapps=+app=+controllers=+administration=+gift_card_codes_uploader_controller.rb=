@@ -2,6 +2,7 @@ let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
 argglobal
 let s:cpo_save=&cpo
 set cpo&vim
+cnoremap <buffer> <SNR>66_foldopen |if &foldopen =~# 'tag'|exe 'norm! zv'|endif
 nmap <buffer> gf <Plug>RailsTabFind
 nmap <buffer> f <Plug>RailsSplitFind
 nnoremap <buffer> <silent> g} :exe        "ptjump =RubyCursorIdentifier()"
@@ -93,7 +94,7 @@ setlocal nospell
 setlocal spellcapcheck=[.?!]\\_[\\])'\"\	\ ]\\+
 setlocal spellfile=
 setlocal spelllang=en
-setlocal statusline=%<%#StatusLine#1\ gift_card_code_encryption_key.rb[#]\ \ %#StatuslineNC#2\ gift_card_code_encrypted_value.rb%#StatusLine#\ \ 3\ user_device_campaign.rb\ \ 4\ future_user_device_campaign_table_partitions_creator.rb>%#StatusLine#%=\ \ \ \ \ \ \ \ 
+setlocal statusline=%<%#StatusLine#1\ gift_card_code_clear_text_viewer.rb\ \ %#StatuslineNC#3\ gift_card_codes_uploader_controller.rb%#StatusLine#\ \ 6\ gift_card_codes_uploader.rb[#]>%#StatusLine#%=\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 
 setlocal suffixesadd=.rb
 setlocal swapfile
 setlocal synmaxcol=3000
@@ -110,11 +111,11 @@ setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 1 - ((0 * winheight(0) + 23) / 47)
+let s:l = 53 - ((6 * winheight(0) + 11) / 23)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-1
+53
 normal! 0
 let &so = s:so_save | let &siso = s:siso_save
 doautoall SessionLoadPost

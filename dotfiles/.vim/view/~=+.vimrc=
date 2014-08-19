@@ -89,7 +89,7 @@ setlocal nospell
 setlocal spellcapcheck=[.?!]\\_[\\])'\"\	\ ]\\+
 setlocal spellfile=
 setlocal spelllang=en
-setlocal statusline=%<%#StatusLine#%#StatuslineNC#1\ .vimrc%#StatusLine#%#StatusLine#%=\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 
+setlocal statusline=%{lightline#link()}%#LightLineLeft_active_0#%(\ %{lightline#mode()}\ %)%{(1)*((&paste))?('|'):''}%(\ %{&paste?\"PASTE\":\"\"}\ %)%#LightLineLeft_active_0_1#%#LightLineLeft_active_1#%(\ %R\ %)%{(&readonly)*((1)+(&modified||!&modifiable))?('|'):''}%(\ %t\ %)%{(1)*((&modified||!&modifiable))?('|'):''}%(\ %M\ %)%#LightLineLeft_active_1_2#%#LightLineMiddle_active#%=%#LightLineRight_active_2_3#%#LightLineRight_active_2#%(\ %{&fileformat}\ %)%{(1)*((1))?('|'):''}%(\ %{strlen(&fenc)?&fenc:&enc}\ %)%{(1)*((1)+(1))?('|'):''}%(\ %{strlen(&filetype)?&filetype:\"no\ ft\"}\ %)%#LightLineRight_active_1_2#%#LightLineRight_active_1#%(\ %3p%%\ %)%#LightLineRight_active_0_1#%#LightLineRight_active_0#%(\ %3l:%-2v\ %)
 setlocal suffixesadd=
 setlocal swapfile
 setlocal synmaxcol=3000
@@ -106,16 +106,12 @@ setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
-35,39fold
-35
-normal zo
-let s:l = 40 - ((10 * winheight(0) + 24) / 48)
+let s:l = 72 - ((12 * winheight(0) + 24) / 48)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-40
+72
 normal! 0
-lcd ~/gits/freemyapps
 let &so = s:so_save | let &siso = s:siso_save
 doautoall SessionLoadPost
 " vim: set ft=vim :

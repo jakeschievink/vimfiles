@@ -1,14 +1,19 @@
 let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
 argglobal
-nnoremap <buffer> <silent> ] :exe v:count1."stag =RubyCursorIdentifier()"
-nnoremap <buffer> <silent>  :exe v:count1."stag =RubyCursorIdentifier()"
-nnoremap <buffer> <silent> g :exe        "stjump =RubyCursorIdentifier()"
-nnoremap <buffer> <silent> g] :exe      "stselect =RubyCursorIdentifier()"
-nnoremap <buffer> <silent> } :exe          "ptag =RubyCursorIdentifier()"
+let s:cpo_save=&cpo
+set cpo&vim
+cnoremap <buffer> <SNR>67_foldopen |if &foldopen =~# 'tag'|exe 'norm! zv'|endif
 nnoremap <buffer> <silent> g} :exe        "ptjump =RubyCursorIdentifier()"
+nnoremap <buffer> <silent> } :exe          "ptag =RubyCursorIdentifier()"
+nnoremap <buffer> <silent> g] :exe      "stselect =RubyCursorIdentifier()"
+nnoremap <buffer> <silent> g :exe        "stjump =RubyCursorIdentifier()"
+nnoremap <buffer> <silent>  :exe v:count1."stag =RubyCursorIdentifier()"
+nnoremap <buffer> <silent> ] :exe v:count1."stag =RubyCursorIdentifier()"
 nnoremap <buffer> <silent>  :exe  v:count1."tag =RubyCursorIdentifier()"
-nnoremap <buffer> <silent> g :exe         "tjump =RubyCursorIdentifier()"
 nnoremap <buffer> <silent> g] :exe       "tselect =RubyCursorIdentifier()"
+nnoremap <buffer> <silent> g :exe         "tjump =RubyCursorIdentifier()"
+let &cpo=s:cpo_save
+unlet s:cpo_save
 setlocal autoindent
 setlocal nobinary
 setlocal bufhidden=
@@ -103,11 +108,11 @@ setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 29 - ((28 * winheight(0) + 24) / 48)
+let s:l = 25 - ((24 * winheight(0) + 24) / 48)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-29
+25
 normal! 02l
 let &so = s:so_save | let &siso = s:siso_save
 doautoall SessionLoadPost

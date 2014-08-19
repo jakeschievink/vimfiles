@@ -94,7 +94,7 @@ setlocal nospell
 setlocal spellcapcheck=
 setlocal spellfile=
 setlocal spelllang=en
-setlocal statusline=%<%#StatusLine#%#StatuslineNC#1\ gift_card_codes_uploader_controller.rb%#StatusLine#\ \ 3\ batch_upload_controller.rb[#]%#StatusLine#%=\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 
+setlocal statusline=%<%#StatusLine#1\ gift_card_codes_uploader_controller.rb%#StatusLine#%=\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 
 setlocal suffixesadd=.rb
 setlocal swapfile
 setlocal synmaxcol=3000
@@ -111,12 +111,12 @@ setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 3 - ((2 * winheight(0) + 24) / 48)
+let s:l = 10 - ((7 * winheight(0) + 6) / 13)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-3
-normal! 0
+10
+normal! 02l
 lcd ~/gits/freemyapps
 let &so = s:so_save | let &siso = s:siso_save
 doautoall SessionLoadPost

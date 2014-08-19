@@ -2,6 +2,7 @@ let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
 argglobal
 let s:cpo_save=&cpo
 set cpo&vim
+cnoremap <buffer> <SNR>77_foldopen |if &foldopen =~# 'tag'|exe 'norm! zv'|endif
 nmap <buffer> gf <Plug>RailsTabFind
 nmap <buffer> f <Plug>RailsSplitFind
 nnoremap <buffer> <silent> g} :exe        "ptjump =RubyCursorIdentifier()"
@@ -93,7 +94,7 @@ setlocal nospell
 setlocal spellcapcheck=[.?!]\\_[\\])'\"\	\ ]\\+
 setlocal spellfile=
 setlocal spelllang=en
-setlocal statusline=%<%#StatusLine#1\ new.html.erb\ \ 3\ denominations.js.erb\ \ %#StatuslineNC#4\ _denominations.html.erb%#StatusLine#\ \ 5\ ability.rb\ \ 6\ gift_card_vendor_denominations_controller.rb\ \ 7\ gift_card_codes_uploader_controller.rb[#]%#StatusLine#%=\ \ \ \ \ \ \ \ \ \ \ \ 
+setlocal statusline=%<%#StatusLine#1\ new.html.erb%#StatusLine#%=\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 
 setlocal suffixesadd=.rb
 setlocal swapfile
 setlocal synmaxcol=3000
@@ -110,11 +111,11 @@ setlocal winfixwidth
 setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 6 - ((5 * winheight(0) + 18) / 37)
+let s:l = 15 - ((14 * winheight(0) + 24) / 48)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-6
+15
 normal! 05l
 lcd ~/gits/freemyapps
 let &so = s:so_save | let &siso = s:siso_save

@@ -2,6 +2,7 @@ let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
 argglobal
 let s:cpo_save=&cpo
 set cpo&vim
+cnoremap <buffer> <SNR>66_foldopen |if &foldopen =~# 'tag'|exe 'norm! zv'|endif
 nmap <buffer> gf <Plug>RailsTabFind
 nmap <buffer> f <Plug>RailsSplitFind
 nnoremap <buffer> <silent> g} :exe        "ptjump =RubyCursorIdentifier()"
@@ -93,7 +94,7 @@ setlocal nospell
 setlocal spellcapcheck=
 setlocal spellfile=
 setlocal spelllang=en
-setlocal statusline=%<%#StatusLine#1\ gift_card_code_encrypted_key_spec.rb\ \ %#StatuslineNC#3\ gift_card_code_encryption_key.rb[#]%#StatusLine#\ \ 7\ ab_test_device_spec.rb\ \ 82\ factories.rb\ \ 83\ gift_card_code_encrypted_value.rb>%#StatusLine#%=\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 
+setlocal statusline=%<%#StatusLine#1\ gift_card_code_encryption.rb\ \ %#StatuslineNC#5\ gift_card_code_encryption_key.rb[#]%#StatusLine#%#StatusLine#%=\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 
 setlocal suffixesadd=.rb
 setlocal swapfile
 setlocal synmaxcol=3000
@@ -110,12 +111,13 @@ setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 3 - ((2 * winheight(0) + 23) / 47)
+let s:l = 6 - ((5 * winheight(0) + 24) / 48)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-3
-normal! 021l
+6
+normal! 020l
+lcd ~/gits/freemyapps
 let &so = s:so_save | let &siso = s:siso_save
 doautoall SessionLoadPost
 " vim: set ft=vim :

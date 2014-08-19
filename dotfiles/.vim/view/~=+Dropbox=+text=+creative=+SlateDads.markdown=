@@ -50,7 +50,7 @@ setlocal foldexpr=Foldexpr_markdown(v:lnum)
 setlocal foldignore=#
 setlocal foldlevel=0
 setlocal foldmarker={{{,}}}
-setlocal foldmethod=expr
+setlocal foldmethod=manual
 setlocal foldminlines=1
 setlocal foldnestmax=20
 setlocal foldtext=foldtext()
@@ -89,11 +89,11 @@ setlocal shiftwidth=4
 setlocal noshortname
 setlocal nosmartindent
 setlocal softtabstop=0
-setlocal nospell
+setlocal spell
 setlocal spellcapcheck=[.?!]\\_[\\])'\"\	\ ]\\+
 setlocal spellfile=
 setlocal spelllang=en
-setlocal statusline=%<%#StatusLine#%#StatuslineNC#6\ SlateDads.markdown[#]%#StatusLine#\ \ 8\ .vimrc%#StatusLine#%=\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 
+setlocal statusline=%<%#StatusLine#%#StatuslineNC#1\ SlateDads.markdown%#StatusLine#%#StatusLine#%=\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 
 setlocal suffixesadd=
 setlocal swapfile
 setlocal synmaxcol=3000
@@ -109,22 +109,26 @@ setlocal nowinfixheight
 setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
-2
+silent! normal! zE
+5,47fold
+5,47fold
+5,47fold
+5
 normal zo
-2
+5
 normal zo
-2
+5
 normal zo
-2
+5
 normal zo
-2
+5
 normal zo
-let s:l = 10 - ((9 * winheight(0) + 20) / 41)
+let s:l = 4 - ((3 * winheight(0) + 24) / 48)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-10
-normal! 0
+4
+normal! 0101l
 lcd ~/gits/freemyapps
 let &so = s:so_save | let &siso = s:siso_save
 doautoall SessionLoadPost

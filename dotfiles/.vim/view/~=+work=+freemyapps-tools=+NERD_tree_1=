@@ -52,7 +52,7 @@ setlocal cinkeys=0{,0},0),:,0#,!^F,o,O,e
 setlocal cinoptions=
 setlocal cinwords=if,else,while,do,for,switch
 setlocal colorcolumn=
-setlocal comments=s1:/*,mb:*,ex:*/,://,b:#,:%,:XCOMM,n:>,fb:-
+setlocal comments=s1:/*,mb:*,ex:*/,://,b:#,:%,:XCOMM,n:>,b:-
 setlocal commentstring=/*%s*/
 setlocal complete=.,w,b,u,t
 setlocal completefunc=
@@ -119,7 +119,7 @@ setlocal nospell
 setlocal spellcapcheck=
 setlocal spellfile=
 setlocal spelllang=en
-setlocal statusline=%<%#StatusLine#1\ analyze_query_performance%#StatusLine#%=\ \ %{exists('b:NERDTreeRoot')?b:NERDTreeRoot.path.str():''}
+setlocal statusline=%<%#StatusLine#1\ TheGreatShip.%#StatusLine#%=\ %{exists('b:NERDTreeRoot')?b:NERDTreeRoot.path.str():''}
 setlocal suffixesadd=
 setlocal noswapfile
 setlocal synmaxcol=3000
@@ -135,11 +135,11 @@ setlocal nowinfixheight
 setlocal winfixwidth
 setlocal nowrap
 setlocal wrapmargin=0
-let s:l = 4 - ((3 * winheight(0) + 24) / 48)
+let s:l = 5 - ((4 * winheight(0) + 24) / 48)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-4
+5
 normal! 0
 let &so = s:so_save | let &siso = s:siso_save
 doautoall SessionLoadPost

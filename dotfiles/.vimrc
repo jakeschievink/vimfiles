@@ -61,17 +61,12 @@ map <C-d> :normal .<cr>
 nmap ` :shell<CR>
 nmap <S-Enter> O<Esc>
 nmap <CR> o<Esc>
+nmap <C-z>zd :qall!<cr>
 
 set updatetime=10000
 augroup DisableInsert
         autocmd!
         autocmd Focuslost,TabLeave,CursorHoldI * call feedkeys("\<C-\>\<C-n>")
-augroup END
-
-augroup SaveState
-        autocmd!
-        autocmd BufWinLeave * silent! mkview
-        autocmd BufWinEnter * silent! loadview
 augroup END
 
 augroup InsertHighlight
@@ -82,6 +77,17 @@ augroup END
 
 augroup OpenNerdTree
     autocmd!
-    autocmd VimEnter * NERDTree 
-    autocmd VimEnter * wincmd l
+    let blacklist = ['markdown', 'md', 'mkd', 'txt']
+    autocmd VimEnter * if index(blacklist, &ft) < 0 | NERDTree | wincmd l
 augroup END
+
+augroup Writing
+    autocmd!
+    autocmd BufEnter * if index(['markdwon', 'md', 'mkd', 'txt'], &ft) > 0 | call Writing()
+augroup END
+
+function Writing()
+    set spell
+endfunction
+
+   

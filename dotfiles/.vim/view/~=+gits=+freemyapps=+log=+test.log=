@@ -88,7 +88,7 @@ setlocal nospell
 setlocal spellcapcheck=[.?!]\\_[\\])'\"\	\ ]\\+
 setlocal spellfile=
 setlocal spelllang=en
-setlocal statusline=%<%#StatusLine#%#StatusLine#%=\ \ 
+setlocal statusline=%<%#StatusLine#1\ idfa.rb\ \ 3\ gift_card_code_encryption.rb\ \ 6\ gift_card_code_spec.rb[+]\ \ 7\ gift_card_code_encryption.rb[#]%#StatusLine#%=\ \ \ 
 setlocal suffixesadd=.rb
 setlocal noswapfile
 setlocal synmaxcol=3000
@@ -105,12 +105,12 @@ setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 49767 - ((45 * winheight(0) + 24) / 48)
+let s:l = 231 - ((3 * winheight(0) + 12) / 24)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-49767
-normal! 03l
+231
+normal! 0628l
 let &so = s:so_save | let &siso = s:siso_save
 doautoall SessionLoadPost
 " vim: set ft=vim :

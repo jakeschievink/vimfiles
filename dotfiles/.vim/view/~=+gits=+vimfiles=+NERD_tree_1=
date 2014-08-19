@@ -52,7 +52,7 @@ setlocal cinkeys=0{,0},0),:,0#,!^F,o,O,e
 setlocal cinoptions=
 setlocal cinwords=if,else,while,do,for,switch
 setlocal colorcolumn=
-setlocal comments=s1:/*,mb:*,ex:*/,://,b:#,:%,:XCOMM,n:>,fb:-
+setlocal comments=s1:/*,mb:*,ex:*/,://,b:#,:%,:XCOMM,n:>,b:-
 setlocal commentstring=/*%s*/
 setlocal complete=.,w,b,u,t
 setlocal completefunc=
@@ -119,7 +119,7 @@ setlocal nospell
 setlocal spellcapcheck=
 setlocal spellfile=
 setlocal spelllang=en
-setlocal statusline=%<%#StatusLine#1\ .vimrc%#StatusLine#%=\ \ %{exists('b:NERDTreeRoot')?b:NERDTreeRoot.path.str():''}
+setlocal statusline=%{lightline#link()}%#LightLineLeft_active_0#%(\ %{lightline#mode()}\ %)%{(1)*((&paste))?('|'):''}%(\ %{&paste?\"PASTE\":\"\"}\ %)%#LightLineLeft_active_0_1#%#LightLineLeft_active_1#%(\ %R\ %)%{(&readonly)*((1)+(&modified||!&modifiable))?('|'):''}%(\ %t\ %)%{(1)*((&modified||!&modifiable))?('|'):''}%(\ %M\ %)%#LightLineLeft_active_1_2#%#LightLineMiddle_active#%=%#LightLineRight_active_2_3#%#LightLineRight_active_2#%(\ %{&fileformat}\ %)%{(1)*((1))?('|'):''}%(\ %{strlen(&fenc)?&fenc:&enc}\ %)%{(1)*((1)+(1))?('|'):''}%(\ %{strlen(&filetype)?&filetype:\"no\ ft\"}\ %)%#LightLineRight_active_1_2#%#LightLineRight_active_1#%(\ %3p%%\ %)%#LightLineRight_active_0_1#%#LightLineRight_active_0#%(\ %3l:%-2v\ %)
 setlocal suffixesadd=
 setlocal noswapfile
 setlocal synmaxcol=3000
@@ -127,7 +127,7 @@ if &syntax != 'nerdtree'
 setlocal syntax=nerdtree
 endif
 setlocal tabstop=4
-setlocal tags=~/gits/vimfiles/.git/nerdtree.tags,~/gits/vimfiles/.git/tags,./tags,tags
+setlocal tags=
 setlocal textwidth=0
 setlocal thesaurus=
 setlocal noundofile

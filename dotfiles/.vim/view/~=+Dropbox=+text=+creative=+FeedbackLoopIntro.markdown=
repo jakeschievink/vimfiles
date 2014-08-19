@@ -16,7 +16,7 @@ nmap <buffer> ][ <Plug>(Markdown_MoveToNextSiblingHeader)
 nmap <buffer> ]] <Plug>(Markdown_MoveToNextHeader)
 let &cpo=s:cpo_save
 unlet s:cpo_save
-setlocal autoindent
+setlocal noautoindent
 setlocal nobinary
 setlocal bufhidden=
 setlocal buflisted
@@ -28,7 +28,7 @@ setlocal cinwords=if,else,while,do,for,switch
 setlocal colorcolumn=
 setlocal comments=fb:*,fb:-,fb:+,n:>
 setlocal commentstring=>\ %s
-setlocal complete=.,w,b,u,t
+setlocal complete=.,w,b,u,t,i
 setlocal completefunc=
 setlocal nocopyindent
 setlocal cryptmethod=
@@ -67,15 +67,15 @@ setlocal indentkeys=0{,0},:,0#,!^F,o,O,e
 setlocal noinfercase
 setlocal iskeyword=@,48-57,_,192-255
 setlocal keywordprg=
-setlocal linebreak
+setlocal nolinebreak
 setlocal nolisp
 setlocal nolist
 setlocal makeprg=
 setlocal matchpairs=(:),{:},[:],<:>
 setlocal modeline
 setlocal modifiable
-setlocal nrformats=hex
-setlocal nonumber
+setlocal nrformats=octal,hex
+setlocal number
 setlocal numberwidth=4
 setlocal omnifunc=htmlcomplete#CompleteTags
 setlocal path=
@@ -93,7 +93,7 @@ setlocal nospell
 setlocal spellcapcheck=[.?!]\\_[\\])'\"\	\ ]\\+
 setlocal spellfile=
 setlocal spelllang=en
-setlocal statusline=%<%#StatusLine#%#StatuslineNC#1\ FeedbackLoopIntro.markdown%#StatusLine#%#StatusLine#%=\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 
+setlocal statusline=%<%#StatusLine#%#StatuslineNC#1\ FeedbackLoopIntro.markdown%#StatusLine#%#StatusLine#%=\ \ \ \ \ \ \ \ \ \ \ \ 
 setlocal suffixesadd=
 setlocal swapfile
 setlocal synmaxcol=3000
@@ -110,11 +110,11 @@ setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 16 - ((15 * winheight(0) + 24) / 48)
+let s:l = 2 - ((1 * winheight(0) + 24) / 48)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-16
+2
 normal! 0
 let &so = s:so_save | let &siso = s:siso_save
 doautoall SessionLoadPost

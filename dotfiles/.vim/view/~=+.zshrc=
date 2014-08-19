@@ -77,7 +77,7 @@ setlocal nospell
 setlocal spellcapcheck=[.?!]\\_[\\])'\"\	\ ]\\+
 setlocal spellfile=
 setlocal spelllang=en
-setlocal statusline=%<%#StatusLine#%#StatuslineNC#1\ .zshrc%#StatusLine#%#StatusLine#%=\ \ \ \ \ \ \ \ \ \ \ \ \ 
+setlocal statusline=%<%#StatusLine#%#StatuslineNC#1\ .zshrc[#]%#StatusLine#\ \ 3\ .zprofile%#StatusLine#%=\ \ \ \ \ \ \ \ \ \ \ \ \ \ 
 setlocal suffixesadd=
 setlocal swapfile
 setlocal synmaxcol=3000
@@ -94,12 +94,12 @@ setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 83 - ((46 * winheight(0) + 24) / 48)
+let s:l = 84 - ((46 * winheight(0) + 24) / 48)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-83
-normal! 019l
+84
+normal! 0
 let &so = s:so_save | let &siso = s:siso_save
 doautoall SessionLoadPost
 " vim: set ft=vim :

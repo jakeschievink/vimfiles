@@ -55,7 +55,7 @@ setlocal cinkeys=0{,0},0),:,0#,!^F,o,O,e
 setlocal cinoptions=
 setlocal cinwords=if,else,while,do,for,switch
 setlocal colorcolumn=
-setlocal comments=s1:/*,mb:*,ex:*/,://,b:#,:%,:XCOMM,n:>,fb:-
+setlocal comments=s1:/*,mb:*,ex:*/,://,b:#,:%,:XCOMM,n:>,b:-
 setlocal commentstring=/*%s*/
 setlocal complete=.,w,b,u,t
 setlocal completefunc=
@@ -122,7 +122,7 @@ setlocal nospell
 setlocal spellcapcheck=
 setlocal spellfile=
 setlocal spelllang=en
-setlocal statusline=%<%#StatusLine#1\ adolescentbody.markdown%#StatusLine#%=\ \ %{exists('b:NERDTreeRoot')?b:NERDTreeRoot.path.str():''}
+setlocal statusline=%<%#StatusLine#1\ .zshrc%#StatusLine#%=\ %{exists('b:NERDTreeRoot')?b:NERDTreeRoot.path.str():''}
 setlocal suffixesadd=.rb
 setlocal noswapfile
 setlocal synmaxcol=3000

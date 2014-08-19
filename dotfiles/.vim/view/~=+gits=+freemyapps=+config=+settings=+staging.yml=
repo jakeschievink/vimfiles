@@ -84,7 +84,7 @@ setlocal nospell
 setlocal spellcapcheck=
 setlocal spellfile=
 setlocal spelllang=en
-setlocal statusline=%<%#StatusLine#1\ batch_processing_data_file.rb\ \ 2\ batch_processing_data_file_type.rb\ \ 3\ settings.yml[#]\ \ %#StatuslineNC#4\ staging.yml%#StatusLine#\ \ 5\ base.rb\ \ 6\ base_mixin.rb%#StatusLine#%=\ \ \ \ \ \ \ \ \ \ \ \ \ 
+setlocal statusline=%<%#StatusLine#1\ settings.yml\ \ 3\ development.yml\ \ %#StatuslineNC#4\ staging.yml[#]%#StatusLine#\ \ 5\ production.yml%#StatusLine#%=\ \ \ \ \ \ \ \ \ \ \ \ \ \ 
 setlocal suffixesadd=.rb
 setlocal swapfile
 setlocal synmaxcol=3000
@@ -101,12 +101,12 @@ setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 14 - ((13 * winheight(0) + 22) / 45)
+let s:l = 19 - ((18 * winheight(0) + 24) / 48)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-14
-normal! 0
+19
+normal! 01l
 let &so = s:so_save | let &siso = s:siso_save
 doautoall SessionLoadPost
 " vim: set ft=vim :
