@@ -1,0 +1,113 @@
+let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
+argglobal
+let s:cpo_save=&cpo
+set cpo&vim
+cnoremap <buffer> <SNR>66_foldopen |if &foldopen =~# 'tag'|exe 'norm! zv'|endif
+nmap <buffer> gf <Plug>RailsTabFind
+nmap <buffer> f <Plug>RailsSplitFind
+nmap <buffer> gf <Plug>RailsFind
+let &cpo=s:cpo_save
+unlet s:cpo_save
+setlocal autoindent
+setlocal nobinary
+setlocal bufhidden=
+setlocal buflisted
+setlocal buftype=
+setlocal nocindent
+setlocal cinkeys=0{,0},0),:,0#,!^F,o,O,e
+setlocal cinoptions=
+setlocal cinwords=if,else,while,do,for,switch
+setlocal colorcolumn=
+setlocal comments=:#
+setlocal commentstring=#\ %s
+setlocal complete=.,w,b,u,t
+setlocal completefunc=
+setlocal nocopyindent
+setlocal cryptmethod=
+setlocal nocursorbind
+setlocal nocursorcolumn
+setlocal nocursorline
+setlocal define=^\\s*def\\s\\+\\(self\\.\\)\\=
+setlocal dictionary=
+setlocal nodiff
+setlocal equalprg=
+setlocal errorformat=
+setlocal expandtab
+if &filetype != 'ruby'
+setlocal filetype=ruby
+endif
+setlocal foldcolumn=0
+setlocal foldenable
+setlocal foldexpr=0
+setlocal foldignore=#
+setlocal foldlevel=0
+setlocal foldmarker={{{,}}}
+setlocal foldmethod=manual
+setlocal foldminlines=1
+setlocal foldnestmax=20
+setlocal foldtext=foldtext()
+setlocal formatexpr=
+setlocal formatoptions=croql
+setlocal formatlistpat=^\\s*\\d\\+[\\]:.)}\\t\ ]\\s*
+setlocal grepprg=
+setlocal iminsert=0
+setlocal imsearch=0
+setlocal include=^\\s*\\<\\(load\\>\\|require\\>\\|autoload\\s*:\\=[\"']\\=\\h\\w*[\"']\\=,\\)
+setlocal includeexpr=RailsIncludeexpr()
+setlocal indentexpr=GetRubyIndent(v:lnum)
+setlocal indentkeys=0{,0},0),0],!^F,o,O,e,:,.,=end,=else,=elsif,=when,=ensure,=rescue,==begin,==end,=private,=protected,=public
+setlocal noinfercase
+setlocal iskeyword=@,48-57,_,192-255
+setlocal keywordprg=ri
+setlocal nolinebreak
+setlocal nolisp
+setlocal nolist
+setlocal makeprg=
+setlocal matchpairs=(:),{:},[:]
+setlocal modeline
+setlocal modifiable
+setlocal nrformats=hex
+setlocal number
+setlocal numberwidth=4
+setlocal omnifunc=rubycomplete#Complete
+setlocal path=~/gits/freemyapps/lib,~/gits/freemyapps/vendor,~/gits/freemyapps/app/models/concerns,~/gits/freemyapps/app/controllers/concerns,~/gits/freemyapps/app/controllers,~/gits/freemyapps/app/helpers,~/gits/freemyapps/app/mailers,~/gits/freemyapps/app/models,~/gits/freemyapps/app/*,~/gits/freemyapps/app/views,~/gits/freemyapps/app/views/administration/promotional_applications,~/gits/freemyapps/public,~/gits/freemyapps/test,~/gits/freemyapps/test/unit,~/gits/freemyapps/test/functional,~/gits/freemyapps/test/integration,~/gits/freemyapps/test/controllers,~/gits/freemyapps/test/helpers,~/gits/freemyapps/test/mailers,~/gits/freemyapps/test/models,~/gits/freemyapps/spec,~/gits/freemyapps/spec/controllers,~/gits/freemyapps/spec/helpers,~/gits/freemyapps/spec/mailers,~/gits/freemyapps/spec/models,~/gits/freemyapps/spec/views,~/gits/freemyapps/spec/lib,~/gits/freemyapps/spec/features,~/gits/freemyapps/spec/requests,~/gits/freemyapps/spec/integration,~/gits/freemyapps/vendor/plugins/*/lib,~/gits/freemyapps/vendor/plugins/*/t
+setlocal nopreserveindent
+setlocal nopreviewwindow
+setlocal quoteescape=\\
+setlocal noreadonly
+setlocal norelativenumber
+setlocal noscrollbind
+setlocal shiftwidth=2
+setlocal noshortname
+setlocal nosmartindent
+setlocal softtabstop=2
+setlocal nospell
+setlocal spellcapcheck=
+setlocal spellfile=
+setlocal spelllang=en
+setlocal statusline=%<%#StatusLine#1\ gift_card_code_clear_text_viewer.rb\ \ 3\ index.html.erb\ \ 6\ index.html.erb[#]\ \ 7\ _toggle_supported_form.html.erb\ \ 8\ routes.rb\ \ 9\ gift_card_code_clear_text_viewer_controller.rb\ \ 10\ enrollment_notes_controller.rb\ \ 11\ restricted_access_controller.rb\ \ 13\ ability.rb\ \ 49\ gift_card_codes_uploader_controller.rb\ \ 50\ administration_controller.rb\ \ %#StatuslineNC#64\ promotional_applications_controller.rb%#StatusLine#%#StatusLine#%=\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 
+setlocal suffixesadd=.rb
+setlocal swapfile
+setlocal synmaxcol=3000
+if &syntax != 'ruby'
+setlocal syntax=ruby
+endif
+setlocal tabstop=2
+setlocal tags=~/gits/freemyapps/tags,~/gits/freemyapps/tmp/tags,./tags;,tags,~/.rvm/rubies/ruby-1.9.3-p484/lib/ruby/site_ruby/1.9.1/tags,~/.rvm/rubies/ruby-1.9.3-p484/lib/ruby/site_ruby/1.9.1/x86_64-darwin13.2.0/tags,~/.rvm/rubies/ruby-1.9.3-p484/lib/ruby/site_ruby/tags,~/.rvm/rubies/ruby-1.9.3-p484/lib/ruby/vendor_ruby/1.9.1/tags,~/.rvm/rubies/ruby-1.9.3-p484/lib/ruby/vendor_ruby/1.9.1/x86_64-darwin13.2.0/tags,~/.rvm/rubies/ruby-1.9.3-p484/lib/ruby/vendor_ruby/tags,~/.rvm/rubies/ruby-1.9.3-p484/lib/ruby/1.9.1/tags,~/.rvm/rubies/ruby-1.9.3-p484/lib/ruby/1.9.1/x86_64-darwin13.2.0/tags
+setlocal textwidth=0
+setlocal thesaurus=
+setlocal noundofile
+setlocal nowinfixheight
+setlocal nowinfixwidth
+setlocal wrap
+setlocal wrapmargin=0
+silent! normal! zE
+let s:l = 218 - ((23 * winheight(0) + 12) / 24)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+218
+normal! 0
+let &so = s:so_save | let &siso = s:siso_save
+doautoall SessionLoadPost
+" vim: set ft=vim :

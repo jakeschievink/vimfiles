@@ -1,0 +1,167 @@
+let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
+argglobal
+let s:cpo_save=&cpo
+set cpo&vim
+vmap <buffer> [] <Plug>(Markdown_MoveToPreviousSiblingHeader)
+vmap <buffer> [[ <Plug>(Markdown_MoveToPreviousHeader)
+nmap <buffer> [] <Plug>(Markdown_MoveToPreviousSiblingHeader)
+nmap <buffer> [[ <Plug>(Markdown_MoveToPreviousHeader)
+onoremap <buffer> <silent> \i :set opfunc=pandoc#keyboard#ToggleEmphasisg@
+vnoremap <buffer> <silent> \i :call pandoc#keyboard#ToggleEmphasis(visualmode())
+onoremap <buffer> <silent> \b :set opfunc=pandoc#keyboard#ToggleStrongg@
+vnoremap <buffer> <silent> \b :call pandoc#keyboard#ToggleStrong(visualmode())
+onoremap <buffer> <silent> \` :set opfunc=pandoc#keyboard#ToggleVerbatimg@
+vnoremap <buffer> <silent> \` :call pandoc#keyboard#ToggleVerbatim(visualmode())
+onoremap <buffer> <silent> \~~ :set opfunc=pandoc#keyboard#ToggleStrikeoutg@
+vnoremap <buffer> <silent> \~~ :call pandoc#keyboard#ToggleStrikeout(visualmode())
+onoremap <buffer> <silent> \^ :set opfunc=pandoc#keyboard#ToggleSuperscriptg@
+vnoremap <buffer> <silent> \^ :call pandoc#keyboard#ToggleSuperscript(visualmode())
+onoremap <buffer> <silent> \_ :set opfunc=pandoc#keyboard#ToggleSubscriptg@
+vnoremap <buffer> <silent> \_ :call pandoc#keyboard#ToggleSubscript(visualmode())
+noremap <buffer> <silent> \# :call pandoc#keyboard#ApplyHeader(v:count1)
+noremap <buffer> <silent> \hd :call pandoc#keyboard#RemoveHeader()
+noremap <buffer> <silent> \hn :call pandoc#keyboard#NextHeader()
+noremap <buffer> <silent> \hb :call pandoc#keyboard#PrevHeader()
+noremap <buffer> <silent> \hh :call pandoc#keyboard#CurrentHeader()
+noremap <buffer> <silent> \hp :call pandoc#keyboard#CurrentHeaderParent()
+noremap <buffer> <silent> \hsn :call pandoc#keyboard#NextSiblingHeader()
+noremap <buffer> <silent> \hsb :call pandoc#keyboard#PrevSiblingHeader()
+noremap <buffer> <silent> \hcf :call pandoc#keyboard#FirstChild()
+noremap <buffer> <silent> \hcl :call pandoc#keyboard#LastChild()
+noremap <buffer> <silent> \hcn :call pandoc#keyboard#GotoNthChild(v:count1)
+noremap <buffer> <silent> \nr :call pandoc#keyboard#Insert_Ref()a
+noremap <buffer> <silent> \rg :call pandoc#keyboard#GOTO_Ref()
+noremap <buffer> <silent> \rb :call pandoc#keyboard#BACKFROM_Ref()
+nnoremap <buffer> <silent> \_ :set opfunc=pandoc#keyboard#ToggleSubscriptg@
+nnoremap <buffer> <silent> \^ :set opfunc=pandoc#keyboard#ToggleSuperscriptg@
+nnoremap <buffer> <silent> \~~ :set opfunc=pandoc#keyboard#ToggleStrikeoutg@
+nnoremap <buffer> <silent> \` :set opfunc=pandoc#keyboard#ToggleVerbatimg@
+nnoremap <buffer> <silent> \b :set opfunc=pandoc#keyboard#ToggleStrongg@
+nnoremap <buffer> <silent> \i :set opfunc=pandoc#keyboard#ToggleEmphasisg@
+vmap <buffer> ]c <Plug>(Markdown_MoveToCurHeader)
+vmap <buffer> ]u <Plug>(Markdown_MoveToParentHeader)
+vmap <buffer> ][ <Plug>(Markdown_MoveToNextSiblingHeader)
+vmap <buffer> ]] <Plug>(Markdown_MoveToNextHeader)
+nmap <buffer> ]c <Plug>(Markdown_MoveToCurHeader)
+nmap <buffer> ]u <Plug>(Markdown_MoveToParentHeader)
+nmap <buffer> ][ <Plug>(Markdown_MoveToNextSiblingHeader)
+nmap <buffer> ]] <Plug>(Markdown_MoveToNextHeader)
+nnoremap <buffer> j gj
+vnoremap <buffer> j gj
+nnoremap <buffer> k gk
+vnoremap <buffer> k gk
+let &cpo=s:cpo_save
+unlet s:cpo_save
+setlocal autoindent
+setlocal nobinary
+setlocal bufhidden=
+setlocal buflisted
+setlocal buftype=
+setlocal nocindent
+setlocal cinkeys=0{,0},0),:,0#,!^F,o,O,e
+setlocal cinoptions=
+setlocal cinwords=if,else,while,do,for,switch
+setlocal colorcolumn=
+setlocal comments=b:*,b:+,b:-
+setlocal commentstring=/*%s*/
+setlocal complete=.,w,b,u,t
+setlocal completefunc=
+setlocal nocopyindent
+setlocal cryptmethod=
+setlocal nocursorbind
+setlocal nocursorcolumn
+setlocal nocursorline
+setlocal define=
+setlocal dictionary=
+setlocal nodiff
+setlocal equalprg=
+setlocal errorformat=
+setlocal expandtab
+if &filetype != 'mkd'
+setlocal filetype=mkd
+endif
+setlocal foldcolumn=5
+setlocal foldenable
+setlocal foldexpr=Foldexpr_markdown(v:lnum)
+setlocal foldignore=#
+setlocal foldlevel=0
+setlocal foldmarker={{{,}}}
+setlocal foldmethod=expr
+setlocal foldminlines=1
+setlocal foldnestmax=20
+setlocal foldtext=foldtext()
+setlocal formatexpr=
+setlocal formatoptions=tcq
+setlocal formatlistpat=^\\s*\\d\\+\\.\\s\\+\\|^[-*+]\\s\\+
+setlocal grepprg=
+setlocal iminsert=0
+setlocal imsearch=0
+setlocal include=
+setlocal includeexpr=
+setlocal indentexpr=GetMkdIndent()
+setlocal indentkeys=0{,0},:,0#,!^F,o,O,e
+setlocal noinfercase
+setlocal iskeyword=@,48-57,_,192-255
+setlocal keywordprg=
+setlocal linebreak
+setlocal nolisp
+setlocal nolist
+setlocal makeprg=
+setlocal matchpairs=(:),{:},[:]
+setlocal modeline
+setlocal modifiable
+setlocal nrformats=hex
+setlocal number
+setlocal numberwidth=4
+setlocal omnifunc=
+setlocal path=
+setlocal nopreserveindent
+setlocal nopreviewwindow
+setlocal quoteescape=\\
+setlocal noreadonly
+setlocal norelativenumber
+setlocal noscrollbind
+setlocal shiftwidth=4
+setlocal noshortname
+setlocal nosmartindent
+setlocal softtabstop=0
+setlocal spell
+setlocal spellcapcheck=[.?!]\\_[\\])'\"\	\ ]\\+
+setlocal spellfile=
+setlocal spelllang=en
+setlocal statusline=%<%#StatusLine#%#StatuslineNC#1\ TheGreatShip.markdown%#StatusLine#%#StatusLine#%=\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 
+setlocal suffixesadd=
+setlocal swapfile
+setlocal synmaxcol=3000
+if &syntax != 'mkd'
+setlocal syntax=mkd
+endif
+setlocal tabstop=4
+setlocal tags=
+setlocal textwidth=0
+setlocal thesaurus=
+setlocal noundofile
+setlocal nowinfixheight
+setlocal nowinfixwidth
+setlocal wrap
+setlocal wrapmargin=10
+2
+normal zo
+2
+normal zo
+2
+normal zo
+2
+normal zo
+2
+normal zo
+let s:l = 56 - ((10 * winheight(0) + 24) / 48)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+56
+normal! 0
+lcd ~/Dropbox/text/creative
+let &so = s:so_save | let &siso = s:siso_save
+doautoall SessionLoadPost
+" vim: set ft=vim :
