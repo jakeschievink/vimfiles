@@ -86,6 +86,17 @@ augroup Writing
     autocmd BufEnter * if index(['markdwon', 'md', 'mkd', 'txt'], &ft) > 0 | call Writing()
 augroup END
 
+augroup Arduino
+    autocmd!
+    autocmd BufEnter * if index(['ino', 'pde', 'arduino'], &ft) > 0 | call Arduino()
+augroup END
+
+function Arduino()
+    call iab spl Serial.println("
+    call iab sp Serial.print("
+endfunction
+
+
 function Writing()
     set spell
 endfunction

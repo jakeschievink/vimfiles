@@ -55,3 +55,12 @@
 [submodule "dotfiles/.vim/bundle/syntastic"]
 	path = dotfiles/.vim/bundle/syntastic
 	url = https://github.com/scrooloose/syntastic.git
+[submodule "dotfiles/.vim/bundle/vim-airline"]
+	path = dotfiles/.vim/bundle/vim-airline
+	url = https://github.com/bling/vim-airline.git
+[submodule "dotfiles/.vim/bundle/vim-signify"]
+	path = dotfiles/.vim/bundle/vim-signify
+	url = https://github.com/mhinz/vim-signify.git
+[submodule "dotfiles/.vim/bundle/vim-bufferline"]
+	path = dotfiles/.vim/bundle/vim-bufferline
+	url = https://github.com/bling/vim-bufferline.git
